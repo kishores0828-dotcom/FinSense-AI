@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import relationship
-import Base # Ensure this path matches your project structure
+from database import Base # Ensure this path matches your project structure
 
 class User(Base):
     __tablename__ = "users"
