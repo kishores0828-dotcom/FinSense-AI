@@ -7,14 +7,14 @@ from database import SessionLocal, engine
 # 1. IMPORT CORS MIDDLEWARE
 from fastapi.middleware.cors import CORSMiddleware
 
-import get_password_hash
-from fastapi.security import OAuth2PasswordRequestForm
+from auth import get_password_hash
+from auth import verify_password, create_access_token
 import verify_password, create_access_token
 
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt, JWTError
 import SECRET_KEY, ALGORITHM
-import suggest_category
+from utils import suggest_category
 
 
 # Create the database tables
