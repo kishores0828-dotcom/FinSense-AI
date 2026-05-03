@@ -1,19 +1,19 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from backend import models, schemas
-from backend.database import SessionLocal, engine
+import models, schemas
+import SessionLocal, engine
 
 # 1. IMPORT CORS MIDDLEWARE
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.auth import get_password_hash
+import get_password_hash
 from fastapi.security import OAuth2PasswordRequestForm
-from backend.auth import verify_password, create_access_token
+import verify_password, create_access_token
 
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt, JWTError
-from backend.auth import SECRET_KEY, ALGORITHM
-from backend.utils import suggest_category
+import SECRET_KEY, ALGORITHM
+import suggest_category
 
 
 # Create the database tables
