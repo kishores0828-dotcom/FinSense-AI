@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from models import Base
-from schemas import UserCreate  # (or whatever your schema names are)
-import SessionLocal, engine
+import models, schemas
+# CHANGE THE LINE BELOW:
+from database import SessionLocal, engine
 
 # 1. IMPORT CORS MIDDLEWARE
 from fastapi.middleware.cors import CORSMiddleware
